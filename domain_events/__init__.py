@@ -3,7 +3,7 @@ from .publisher import Publisher
 from .subscriber import Subscriber
 
 
-VERSION = (1, 0, 1, 'final')
+VERSION = (1, 1, 0, 'final')
 __version__ = VERSION
 
 

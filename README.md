@@ -63,3 +63,20 @@ Publisher().publish(AnEvent())
 ```
 
 The event will be passed on to the proper subscribers.
+
+
+### Subscribers priority
+
+In order to add priority to subscribers to be executed in certain order, you can add it when subscribing the subscriber to the publisher. The higher the number the higher the priority.
+
+```python
+  publisher = Publisher()
+  publisher.subscribe(a_subscriber)
+  publisher.subscribe(a_subscriber_with_priority, priority=10)
+  publisher.subscribe(another_subscriber_with_priority, priority=15)
+```
+
+The execution order will be:
+ - another_subscriber_with_priority
+ - a_subscriber_with_priority
+ - a_subscriber

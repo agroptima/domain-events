@@ -20,20 +20,29 @@ class Publisher:
     def subscribers(self):
         return self.__subscribers.copy()
 
-    def subscribe(self, subscriber, subscriber_uuid=None):
+    def subscribe(self, subscriber, subscriber_uuid=None, priority=0):
         uuid = subscriber_uuid or str(uuid4())
 
         if uuid in self.__subscribers.keys():
             raise Exception("There already exists a subscriber with this uuid ({})".format(uuid))
 
-        self.__subscribers[uuid] = subscriber
+        self.__subscribers[uuid] = (subscriber, priority)
 
         return uuid
 
     def publish(self, event):
-        for uuid, a_subscriber in self.__subscribers.iteritems():
+        for a_subscriber in self.__order_subscribers_by_priority():
             if a_subscriber.is_subscribed_to(event):
                 a_subscriber.handle(event)
+
+    def __order_subscribers_by_priority(self):
+        subscriber_index = 0
+        priority_index = 1
+
+        sorted_subscribers = sorted(
+            self.__subscribers.iteritems(), key=lambda (key, value): value[priority_index], reverse=True)
+
+        return [value[subscriber_index] for _, value in sorted_subscribers]
 
     def clear(self):
         self.__subscribers.clear()
