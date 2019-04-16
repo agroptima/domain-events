@@ -4,8 +4,7 @@ from abc import (
 )
 
 
-class Subscriber:
-    __metaclass__ = ABCMeta
+class Subscriber(metaclass=ABCMeta):
 
     @abstractmethod
     def handle(self, event):

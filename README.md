@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/agroptima/domain-events.svg)](https://travis-ci.org/agroptima/domain-events)
 [![License GPLv3](https://img.shields.io/badge/license-GPLv3-red.svg)](https://opensource.org/licenses/GPL-3.0)
-![Python versions](https://img.shields.io/badge/python-2.7-blue.svg)
+![Python versions](https://img.shields.io/badge/python-3.x-blue.svg)
 
 A lightweight library with an implementation of Pub-Sub.
 

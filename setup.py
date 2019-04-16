@@ -14,6 +14,9 @@ setup(
     download_url='https://github.com/agroptima/domain-events/releases',
     keywords=['python', 'ddd'],
     packages=['domain_events'],
+    install_requires=[
+        'pytz'
+    ],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
