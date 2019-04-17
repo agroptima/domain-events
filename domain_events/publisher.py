@@ -10,8 +10,7 @@ class Singleton(type):
         return cls._instances[cls]
 
 
-class Publisher:
-    __metaclass__ = Singleton
+class Publisher(metaclass=Singleton):
 
     def __init__(self):
         self.__subscribers = {}
@@ -23,7 +22,7 @@ class Publisher:
     def subscribe(self, subscriber, subscriber_uuid=None):
         uuid = subscriber_uuid or str(uuid4())
 
-        if uuid in self.__subscribers.keys():
+        if uuid in list(self.__subscribers.keys()):
             raise Exception("There already exists a subscriber with this uuid ({})".format(uuid))
 
         self.__subscribers[uuid] = subscriber
@@ -31,7 +30,7 @@ class Publisher:
         return uuid
 
     def publish(self, event):
-        for uuid, a_subscriber in self.__subscribers.iteritems():
+        for uuid, a_subscriber in self.__subscribers.items():
             if a_subscriber.is_subscribed_to(event):
                 a_subscriber.handle(event)
 
