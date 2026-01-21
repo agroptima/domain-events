@@ -10,6 +10,7 @@ setup(
     author_email='developers@agroptima.com',
     description='A lightweight library with an implementation of Pub-Sub.',
     long_description=open('README.md').read(),
+    long_description_content_type='text/markdown',
     url='https://github.com/agroptima/domain-events',
     download_url='https://github.com/agroptima/domain-events/releases',
     keywords=['python', 'ddd'],
