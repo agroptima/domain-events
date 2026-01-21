@@ -114,7 +114,7 @@ Follow these steps to publish a new version of the package to PyPI:
 - **Use version tags**: After publishing, tag the release in git:
 
   ```sh
-  git tag -a vX.Y.Z -m "Release vX.Y.Z"
+  git tag -a X.Y.Z -m "Release X.Y.Z"
   git push origin --tags
   ```
 
