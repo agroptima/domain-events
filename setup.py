@@ -1,10 +1,9 @@
 from setuptools import setup
 
-from domain_events import get_version
 
 setup(
     name="domain-events",
-    version=get_version(),
+    version="2.2.0",
     license="GPLv3",
     author="Isagri S.L.U.",
     author_email="devs.es@groupeisagri.com",
