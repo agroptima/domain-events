@@ -78,7 +78,7 @@ Follow these steps to publish a new version of the package to PyPI:
 3. **Build the distribution packages**:
 
    ```sh
-   python setup.py sdist
+   python -m build
    ```
 
    This creates both source distribution (.tar.gz) and wheel (.whl) in the `dist/` directory.
