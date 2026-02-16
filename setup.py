@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name="domain-events",
-    version="2.2.0",
+    version="2.3.0",
     license="GPLv3",
     author="Isagri S.L.U.",
     author_email="devs.es@groupeisagri.com",
